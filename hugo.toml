@@ -1,7 +1,6 @@
 baseURL = "https://digital-ai-finance.github.io/hugo-research-template/"
 languageCode = "en-us"
 title = "Quantum Computing for Financial Optimization"
-theme = ""
 
 [params]
   description = "Leveraging quantum algorithms for portfolio optimization and derivative pricing"
