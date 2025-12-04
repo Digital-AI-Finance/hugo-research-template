@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ .Site.Title }}">
+    <meta property="og:description" content="{{ .Site.Params.description }}">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+    <div class="layout-wrapper">
+        <!-- Left Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <a href="{{ "/" | relURL }}" class="nav-logo">
+                    <span class="logo-text">QFO</span>
+                </a>
+            </div>
+            <div class="sidebar-nav">
+                <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+                <a href="#team"><i class="fas fa-users"></i> Team</a>
+                <a href="#output"><i class="fas fa-chart-bar"></i> Output</a>
+                <a href="#publications"><i class="fas fa-book"></i> Publications</a>
+                <a href="#events"><i class="fas fa-calendar"></i> Events</a>
+                <a href="#collaborations"><i class="fas fa-handshake"></i> Collaborations</a>
+                <a href="#funding"><i class="fas fa-coins"></i> Funding</a>
+                <a href="#partners"><i class="fas fa-university"></i> Partners</a>
+                <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            <div class="sidebar-footer">
+                <a href="https://github.com/Digital-AI-Finance" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            {{ block "main" . }}{{ end }}
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-container">
+                    <p>FHGR - University of Applied Sciences | Quantum Finance Project</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

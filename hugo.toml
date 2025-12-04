@@ -1,0 +1,19 @@
+baseURL = "https://digital-ai-finance.github.io/hugo-research-template/"
+languageCode = "en-us"
+title = "Quantum Computing for Financial Optimization"
+theme = ""
+
+[params]
+  description = "Leveraging quantum algorithms for portfolio optimization and derivative pricing"
+  badge1 = "SNF Research Project"
+  badge2 = "2024-2028"
+  author = "Prof. Dr. Joerg Osterrieder"
+  email = "joerg.osterrieder@fhgr.ch"
+  institution = "Institute for Digital Finance"
+  university = "FHGR - University of Applied Sciences"
+  location = "Chur, Switzerland"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
