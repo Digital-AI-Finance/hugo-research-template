@@ -1,0 +1,23 @@
+- name: "FHGR"
+  logo: "/images/logos/fhgr.png"
+  url: "https://www.fhgr.ch"
+
+- name: "ETH Zurich"
+  logo: "/images/logos/eth.png"
+  url: "https://ethz.ch"
+
+- name: "IBM Research"
+  logo: "/images/logos/ibm.png"
+  url: "https://research.ibm.com"
+
+- name: "TU Delft"
+  logo: "/images/logos/tudelft.png"
+  url: "https://tudelft.nl"
+
+- name: "UBS"
+  logo: "/images/logos/ubs.png"
+  url: "https://ubs.com"
+
+- name: "ZHAW"
+  logo: "/images/logos/zhaw.png"
+  url: "https://zhaw.ch"

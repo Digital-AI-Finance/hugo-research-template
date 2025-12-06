@@ -19,18 +19,39 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+
+    <!-- Dark mode initial check -->
+    <script>
+        if (localStorage.getItem('darkMode') === 'true' ||
+            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
 </head>
 <body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <span class="logo-text">{{ .Site.Params.logo_text | default "QFO" }}</span>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="navOverlay"></div>
+
     <div class="layout-wrapper">
         <!-- Left Sidebar Navigation -->
-        <nav class="sidebar">
+        <nav class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <a href="{{ "/" | relURL }}" class="nav-logo">
-                    <span class="logo-text">QFO</span>
+                    <span class="logo-text">{{ .Site.Params.logo_text | default "QFO" }}</span>
                 </a>
             </div>
             <div class="sidebar-nav">
+                <a href="#news"><i class="fas fa-newspaper"></i> News</a>
                 <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+                <a href="#timeline"><i class="fas fa-clock"></i> Timeline</a>
                 <a href="#team"><i class="fas fa-users"></i> Team</a>
                 <a href="#output"><i class="fas fa-chart-bar"></i> Output</a>
                 <a href="#publications"><i class="fas fa-book"></i> Publications</a>
@@ -41,8 +62,9 @@
                 <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
             </div>
             <div class="sidebar-footer">
-                <a href="https://github.com/Digital-AI-Finance" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Digital-AI-Finance" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <button id="darkModeToggle" title="Toggle dark mode"><i class="fas fa-moon"></i></button>
             </div>
         </nav>
 
@@ -53,22 +75,13 @@
             <!-- Footer -->
             <footer class="footer">
                 <div class="footer-container">
-                    <p>FHGR - University of Applied Sciences | Quantum Finance Project</p>
+                    <p>{{ .Site.Params.institution | default "FHGR" }} | {{ .Site.Title }}</p>
                 </div>
             </footer>
         </main>
     </div>
 
-    <!-- Smooth Scroll Script -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="{{ "js/main.js" | relURL }}"></script>
 </body>
 </html>

@@ -1,0 +1,29 @@
+- date: "2024-01"
+  title: "Project Kickoff"
+  description: "Initial team meeting and project planning at FHGR."
+  status: "completed"
+
+- date: "2024-06"
+  title: "First Prototype"
+  description: "Quantum portfolio optimizer running on IBM simulators."
+  status: "completed"
+
+- date: "2024-12"
+  title: "Hardware Experiments"
+  description: "Testing on IBM Eagle 127-qubit processor."
+  status: "current"
+
+- date: "2025-06"
+  title: "Mid-term Review"
+  description: "Progress presentation to SNF evaluation committee."
+  status: "upcoming"
+
+- date: "2026-01"
+  title: "Industry Pilot"
+  description: "Deployment with UBS for real portfolio testing."
+  status: "upcoming"
+
+- date: "2028-01"
+  title: "Project Completion"
+  description: "Final deliverables and technology transfer."
+  status: "upcoming"

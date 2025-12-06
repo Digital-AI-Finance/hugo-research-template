@@ -12,40 +12,47 @@
     </div>
 </section>
 
+<!-- News Section -->
+<section class="section" id="news">
+    <h2 class="section-title">Latest News</h2>
+    <div class="news-list">
+        {{ range first 4 .Site.Data.news }}
+        <div class="news-item">
+            <span class="news-date">{{ .date }}</span>
+            <div class="news-content">
+                <h4>{{ .title }}</h4>
+                <p>{{ .content }}</p>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</section>
+
 <!-- About Section -->
-<section class="section" id="about">
+<section class="section section-alt" id="about">
     <h2 class="section-title">About the Project</h2>
     <div class="about-grid">
+        {{ range .Site.Data.about }}
         <div class="about-card">
-            <i class="fas fa-atom"></i>
-            <h3>Quantum Algorithms</h3>
-            <p>Developing QAOA and VQE algorithms for combinatorial portfolio optimization problems.</p>
+            <i class="fas {{ .icon }}"></i>
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
         </div>
-        <div class="about-card">
-            <i class="fas fa-calculator"></i>
-            <h3>Option Pricing</h3>
-            <p>Quantum Monte Carlo methods for faster derivative pricing and risk assessment.</p>
+        {{ end }}
+    </div>
+</section>
+
+<!-- Timeline Section -->
+<section class="section" id="timeline">
+    <h2 class="section-title">Project Timeline</h2>
+    <div class="timeline">
+        {{ range .Site.Data.timeline }}
+        <div class="timeline-item {{ .status }}">
+            <span class="timeline-date">{{ .date }}</span>
+            <h4>{{ .title }}</h4>
+            <p>{{ .description }}</p>
         </div>
-        <div class="about-card">
-            <i class="fas fa-project-diagram"></i>
-            <h3>Hybrid Systems</h3>
-            <p>Classical-quantum hybrid architectures for near-term NISQ device deployment.</p>
-        </div>
-        <div class="about-card">
-            <i class="fas fa-microchip"></i>
-            <h3>Hardware Access</h3>
-            <p>Partnerships with IBM Quantum and IonQ for real quantum hardware experiments.</p>
-        </div>
-        <div class="about-card">
-            <i class="fas fa-balance-scale"></i>
-            <h3>Risk Management</h3>
-            <p>Quantum-enhanced VaR and CVaR calculations for portfolio risk assessment.</p>
-        </div>
-        <div class="about-card">
-            <i class="fas fa-book-open"></i>
-            <h3>Open Research</h3>
-            <p>Qiskit-based tutorials and reproducible experiments for the research community.</p>
-        </div>
+        {{ end }}
     </div>
 </section>
 
@@ -53,54 +60,34 @@
 <section class="section section-alt" id="team">
     <h2 class="section-title">Research Team</h2>
     <div class="team-grid">
+        {{ range .Site.Data.team }}
         <div class="team-member">
-            <div class="team-avatar" style="background:linear-gradient(135deg,#2d3748,#4a5568);">JO</div>
-            <h4>Prof. Dr. J. Osterrieder</h4>
-            <p class="role">Principal Investigator</p>
-            <p class="affiliation">FHGR / ZHAW</p>
+            {{ if .photo }}
+            <img src="{{ .photo | relURL }}" alt="{{ .name }}" class="team-photo">
+            {{ else }}
+            <div class="team-avatar">{{ .initials }}</div>
+            {{ end }}
+            <h4>
+                {{ if .website }}
+                <a href="{{ .website }}" target="_blank">{{ .name }}</a>
+                {{ else }}
+                {{ .name }}
+                {{ end }}
+            </h4>
+            <p class="role">{{ .role }}</p>
+            <p class="affiliation">{{ .affiliation }}</p>
+            {{ if or .orcid .website }}
+            <div class="team-links">
+                {{ if .orcid }}
+                <a href="https://orcid.org/{{ .orcid }}" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
+                {{ end }}
+                {{ if .website }}
+                <a href="{{ .website }}" target="_blank" title="Website"><i class="fas fa-globe"></i></a>
+                {{ end }}
+            </div>
+            {{ end }}
         </div>
-        <div class="team-member">
-            <div class="team-avatar" style="background:linear-gradient(135deg,#4a5568,#718096);">PB</div>
-            <h4>Dr. P. Barkoutsos</h4>
-            <p class="role">Quantum Lead</p>
-            <p class="affiliation">IBM Research</p>
-        </div>
-        <div class="team-member">
-            <div class="team-avatar" style="background:linear-gradient(135deg,#718096,#a0aec0);">AN</div>
-            <h4>Dr. A. Neven</h4>
-            <p class="role">Senior Researcher</p>
-            <p class="affiliation">ETH Zurich</p>
-        </div>
-        <div class="team-member">
-            <div class="team-avatar" style="background:linear-gradient(135deg,#553c9a,#805ad5);">MZ</div>
-            <h4>M. Zhang</h4>
-            <p class="role">PhD Student</p>
-            <p class="affiliation">FHGR</p>
-        </div>
-        <div class="team-member">
-            <div class="team-avatar" style="background:linear-gradient(135deg,#805ad5,#b794f4);">EK</div>
-            <h4>E. Kowalski</h4>
-            <p class="role">PhD Student</p>
-            <p class="affiliation">ETH Zurich</p>
-        </div>
-        <div class="team-member">
-            <div class="team-avatar" style="background:linear-gradient(135deg,#d69e2e,#ecc94b);">RL</div>
-            <h4>R. Liu</h4>
-            <p class="role">Postdoc</p>
-            <p class="affiliation">FHGR</p>
-        </div>
-        <div class="team-member">
-            <div class="team-avatar" style="background:linear-gradient(135deg,#38a169,#68d391);">CS</div>
-            <h4>C. Steiner</h4>
-            <p class="role">Research Assistant</p>
-            <p class="affiliation">ZHAW</p>
-        </div>
-        <div class="team-member">
-            <div class="team-avatar" style="background:linear-gradient(135deg,#3182ce,#63b3ed);">JW</div>
-            <h4>Prof. J. Woerner</h4>
-            <p class="role">External Advisor</p>
-            <p class="affiliation">TU Delft</p>
-        </div>
+        {{ end }}
     </div>
 </section>
 
@@ -108,77 +95,43 @@
 <section class="section" id="output">
     <h2 class="section-title">Research Output</h2>
     <div class="stats-grid">
+        {{ range .Site.Data.stats }}
         <div class="stat-card">
-            <div class="stat-number">14</div>
-            <div class="stat-label">Publications</div>
+            <div class="stat-number">{{ .number }}</div>
+            <div class="stat-label">{{ .label }}</div>
         </div>
-        <div class="stat-card">
-            <div class="stat-number">6</div>
-            <div class="stat-label">Conferences</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">2</div>
-            <div class="stat-label">Patents</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">9</div>
-            <div class="stat-label">Partners</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">18</div>
-            <div class="stat-label">Presentations</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">4</div>
-            <div class="stat-label">PhD Theses</div>
-        </div>
+        {{ end }}
     </div>
 </section>
 
 <!-- Publications Section -->
 <section class="section section-alt" id="publications">
-    <h2 class="section-title">Publications</h2>
+    <div class="publications-header">
+        <h2 class="section-title">Publications</h2>
+        <button class="bibtex-btn" id="downloadBibtex">
+            <i class="fas fa-download"></i> Download BibTeX
+        </button>
+    </div>
     <div class="publications-grid">
-        <div class="publication-card">
-            <span class="pub-type journal">Journal Article</span>
-            <h4>Quantum Portfolio Optimization with QAOA: A Practical Assessment</h4>
-            <p class="authors">Osterrieder J, Barkoutsos P, Zhang M</p>
-            <p class="venue">Nature Computational Science, 2024</p>
+        {{ range .Site.Data.publications }}
+        <div class="publication-card" data-bibtex="{{ .bibtex | htmlEscape }}">
+            <span class="pub-type {{ .type }}">{{ .type }}</span>
+            <h4>{{ .title }}</h4>
+            <p class="authors">{{ .authors }}</p>
+            <p class="venue">{{ .venue }}, {{ .year }}</p>
             <div class="pub-links">
-                <a href="#" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
-                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> DOI</a>
+                {{ if .doi }}
+                <a href="https://doi.org/{{ .doi }}" target="_blank"><i class="fas fa-external-link-alt"></i> DOI</a>
+                {{ end }}
+                {{ if .arxiv }}
+                <a href="https://arxiv.org/abs/{{ .arxiv }}" target="_blank"><i class="fas fa-file-alt"></i> arXiv</a>
+                {{ end }}
+                {{ if .pdf }}
+                <a href="{{ .pdf }}" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
+                {{ end }}
             </div>
         </div>
-        <div class="publication-card">
-            <span class="pub-type conference">Conference</span>
-            <h4>Hybrid Classical-Quantum Algorithms for Option Pricing</h4>
-            <p class="authors">Neven A, Kowalski E, Liu R</p>
-            <p class="venue">QIP 2024, Taipei</p>
-            <div class="pub-links">
-                <a href="#" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
-                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> DOI</a>
-            </div>
-        </div>
-        <div class="publication-card">
-            <span class="pub-type preprint">Preprint</span>
-            <h4>Error Mitigation Strategies for Financial Quantum Circuits</h4>
-            <p class="authors">Zhang M, Steiner C, Osterrieder J</p>
-            <p class="venue">arXiv:2024.xxxxx</p>
-            <div class="pub-links">
-                <a href="#" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
-                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> arXiv</a>
-            </div>
-        </div>
-        <div class="publication-card">
-            <span class="pub-type journal">Journal Article</span>
-            <h4>Quantum Machine Learning for Credit Risk Assessment</h4>
-            <p class="authors">Liu R, Barkoutsos P</p>
-            <p class="venue">Quantum Science and Technology, 2024</p>
-            <div class="pub-links">
-                <a href="#" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
-                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> DOI</a>
-            </div>
-        </div>
+        {{ end }}
     </div>
 </section>
 
@@ -186,32 +139,21 @@
 <section class="section" id="events">
     <h2 class="section-title">Events</h2>
     <div class="events-grid">
-        <div class="event-card upcoming">
+        {{ range .Site.Data.events }}
+        <div class="event-card {{ if .upcoming }}upcoming{{ end }}">
             <div class="event-date">
-                <span class="month">Jun</span>
-                <span class="day">20</span>
-                <span class="year">2025</span>
+                <span class="month">{{ .month }}</span>
+                <span class="day">{{ .day }}</span>
+                <span class="year">{{ .year }}</span>
             </div>
             <div class="event-details">
-                <span class="event-type">Workshop</span>
-                <h4>Quantum Finance Workshop 2025</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Zurich, Switzerland</p>
-                <p>Hands-on workshop on quantum algorithms for finance using Qiskit.</p>
+                <span class="event-type">{{ .type }}</span>
+                <h4>{{ .title }}</h4>
+                <p><i class="fas fa-map-marker-alt"></i> {{ .location }}</p>
+                <p>{{ .description }}</p>
             </div>
         </div>
-        <div class="event-card">
-            <div class="event-date">
-                <span class="month">Nov</span>
-                <span class="day">8</span>
-                <span class="year">2024</span>
-            </div>
-            <div class="event-details">
-                <span class="event-type">Conference</span>
-                <h4>IEEE Quantum Week 2024</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Montreal, Canada</p>
-                <p>Presented quantum portfolio optimization results on IBM Eagle processors.</p>
-            </div>
-        </div>
+        {{ end }}
     </div>
 </section>
 
@@ -219,21 +161,13 @@
 <section class="section section-alt" id="collaborations">
     <h2 class="section-title">Collaborations</h2>
     <div class="collaborations-grid">
+        {{ range .Site.Data.collaborations }}
         <div class="collab-card">
-            <h4>IBM Quantum Network</h4>
-            <p class="collab-partner">IBM Research Zurich</p>
-            <p>Access to 127-qubit Eagle and 1000+ qubit Condor processors for finance experiments.</p>
+            <h4>{{ .title }}</h4>
+            <p class="collab-partner">{{ .partner }}</p>
+            <p>{{ .description }}</p>
         </div>
-        <div class="collab-card">
-            <h4>Industry Partnership</h4>
-            <p class="collab-partner">Credit Suisse / UBS</p>
-            <p>Joint development of quantum risk models for derivatives portfolios.</p>
-        </div>
-        <div class="collab-card">
-            <h4>Academic Network</h4>
-            <p class="collab-partner">QFin Consortium</p>
-            <p>European research network for quantum computing in quantitative finance.</p>
-        </div>
+        {{ end }}
     </div>
 </section>
 
@@ -241,24 +175,20 @@
 <section class="section" id="funding">
     <h2 class="section-title">Funding</h2>
     <div class="funding-grid">
+        {{ range .Site.Data.funders }}
         <div class="funding-card">
-            <div class="funding-icon">SNF</div>
-            <h4>Swiss National Science Foundation</h4>
-            <p>SNSF Sinergia Grant</p>
-            <p class="grant-id">Grant No. CRSII5_200000</p>
+            {{ if .logo }}
+            <div class="funding-logo">
+                <img src="{{ .logo | relURL }}" alt="{{ .name }}">
+            </div>
+            {{ else }}
+            <div class="funding-icon">{{ .short }}</div>
+            {{ end }}
+            <h4>{{ .name }}</h4>
+            <p>{{ .program }}</p>
+            <p class="grant-id">{{ .grant_id }}</p>
         </div>
-        <div class="funding-card">
-            <div class="funding-icon">EU</div>
-            <h4>EU Quantum Flagship</h4>
-            <p>Horizon Europe QFin</p>
-            <p class="grant-id">Grant No. 101080000</p>
-        </div>
-        <div class="funding-card">
-            <div class="funding-icon">IBM</div>
-            <h4>IBM Quantum</h4>
-            <p>Academic Partnership</p>
-            <p class="grant-id">Research Credits</p>
-        </div>
+        {{ end }}
     </div>
 </section>
 
@@ -266,24 +196,15 @@
 <section class="section section-alt" id="partners">
     <h2 class="section-title">Partner Institutions</h2>
     <div class="partners-grid">
-        <div class="partner-logo">
-            <div class="partner-text">FHGR</div>
-        </div>
-        <div class="partner-logo">
-            <div class="partner-text">ETH Zurich</div>
-        </div>
-        <div class="partner-logo">
-            <div class="partner-text">IBM Research</div>
-        </div>
-        <div class="partner-logo">
-            <div class="partner-text">TU Delft</div>
-        </div>
-        <div class="partner-logo">
-            <div class="partner-text">UBS</div>
-        </div>
-        <div class="partner-logo">
-            <div class="partner-text">ZHAW</div>
-        </div>
+        {{ range .Site.Data.partners }}
+        <a href="{{ .url }}" target="_blank" class="partner-card">
+            {{ if .logo }}
+            <img src="{{ .logo | relURL }}" alt="{{ .name }}">
+            {{ else }}
+            <span class="partner-text">{{ .name }}</span>
+            {{ end }}
+        </a>
+        {{ end }}
     </div>
 </section>
 
@@ -319,7 +240,7 @@
 
 <!-- Funding Acknowledgment -->
 <section class="funding-acknowledgment">
-    <p>This project has received funding from the Swiss National Science Foundation (SNSF) under Sinergia grant CRSII5_200000 and the EU Quantum Flagship program.</p>
+    <p>{{ .Site.Params.acknowledgment | default "This project has received funding from the Swiss National Science Foundation (SNSF) under Sinergia grant CRSII5_200000 and the EU Quantum Flagship program." }}</p>
 </section>
 
 {{ end }}

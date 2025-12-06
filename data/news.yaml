@@ -1,0 +1,15 @@
+- date: "2024-12-01"
+  title: "Paper accepted at Nature Computational Science"
+  content: "Our work on QAOA for portfolio optimization has been accepted for publication."
+
+- date: "2024-11-15"
+  title: "New PhD position available"
+  content: "We are looking for a PhD student to work on quantum error mitigation for financial applications."
+
+- date: "2024-10-20"
+  title: "Presentation at IEEE Quantum Week"
+  content: "Team presented latest results on quantum portfolio optimization in Montreal."
+
+- date: "2024-09-05"
+  title: "IBM Quantum partnership extended"
+  content: "Renewed access to IBM Eagle and Condor processors for another 2 years."

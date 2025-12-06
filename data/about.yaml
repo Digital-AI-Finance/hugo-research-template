@@ -1,0 +1,23 @@
+- icon: "fa-atom"
+  title: "Quantum Algorithms"
+  description: "Developing QAOA and VQE algorithms for combinatorial portfolio optimization problems."
+
+- icon: "fa-calculator"
+  title: "Option Pricing"
+  description: "Quantum Monte Carlo methods for faster derivative pricing and risk assessment."
+
+- icon: "fa-project-diagram"
+  title: "Hybrid Systems"
+  description: "Classical-quantum hybrid architectures for near-term NISQ device deployment."
+
+- icon: "fa-microchip"
+  title: "Hardware Access"
+  description: "Partnerships with IBM Quantum and IonQ for real quantum hardware experiments."
+
+- icon: "fa-balance-scale"
+  title: "Risk Management"
+  description: "Quantum-enhanced VaR and CVaR calculations for portfolio risk assessment."
+
+- icon: "fa-book-open"
+  title: "Open Research"
+  description: "Qiskit-based tutorials and reproducible experiments for the research community."

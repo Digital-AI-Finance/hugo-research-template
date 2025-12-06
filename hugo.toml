@@ -11,6 +11,8 @@ title = "Quantum Computing for Financial Optimization"
   institution = "Institute for Digital Finance"
   university = "FHGR - University of Applied Sciences"
   location = "Chur, Switzerland"
+  logo_text = "QFO"
+  acknowledgment = "This project has received funding from the Swiss National Science Foundation (SNSF) under Sinergia grant CRSII5_200000 and the EU Quantum Flagship program."
 
 [markup]
   [markup.goldmark]

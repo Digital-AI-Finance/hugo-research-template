@@ -1,0 +1,62 @@
+- title: "Quantum Portfolio Optimization with QAOA: A Practical Assessment"
+  authors: "Osterrieder J, Barkoutsos P, Zhang M"
+  venue: "Nature Computational Science"
+  year: 2024
+  type: "journal"
+  doi: "10.1038/s43588-024-00001-x"
+  pdf: ""
+  bibtex: |
+    @article{osterrieder2024quantum,
+      title={Quantum Portfolio Optimization with QAOA: A Practical Assessment},
+      author={Osterrieder, Joerg and Barkoutsos, Panagiotis and Zhang, Ming},
+      journal={Nature Computational Science},
+      year={2024},
+      doi={10.1038/s43588-024-00001-x}
+    }
+
+- title: "Hybrid Classical-Quantum Algorithms for Option Pricing"
+  authors: "Neven A, Kowalski E, Liu R"
+  venue: "QIP 2024, Taipei"
+  year: 2024
+  type: "conference"
+  doi: ""
+  pdf: ""
+  bibtex: |
+    @inproceedings{neven2024hybrid,
+      title={Hybrid Classical-Quantum Algorithms for Option Pricing},
+      author={Neven, Andreas and Kowalski, Eva and Liu, Rui},
+      booktitle={Quantum Information Processing Conference},
+      year={2024},
+      address={Taipei}
+    }
+
+- title: "Error Mitigation Strategies for Financial Quantum Circuits"
+  authors: "Zhang M, Steiner C, Osterrieder J"
+  venue: "arXiv:2024.12345"
+  year: 2024
+  type: "preprint"
+  doi: ""
+  arxiv: "2024.12345"
+  bibtex: |
+    @article{zhang2024error,
+      title={Error Mitigation Strategies for Financial Quantum Circuits},
+      author={Zhang, Ming and Steiner, Christian and Osterrieder, Joerg},
+      journal={arXiv preprint arXiv:2024.12345},
+      year={2024}
+    }
+
+- title: "Quantum Machine Learning for Credit Risk Assessment"
+  authors: "Liu R, Barkoutsos P"
+  venue: "Quantum Science and Technology"
+  year: 2024
+  type: "journal"
+  doi: "10.1088/2058-9565/abc123"
+  pdf: ""
+  bibtex: |
+    @article{liu2024quantum,
+      title={Quantum Machine Learning for Credit Risk Assessment},
+      author={Liu, Rui and Barkoutsos, Panagiotis},
+      journal={Quantum Science and Technology},
+      year={2024},
+      doi={10.1088/2058-9565/abc123}
+    }

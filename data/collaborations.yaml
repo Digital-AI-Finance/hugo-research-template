@@ -1,0 +1,11 @@
+- title: "IBM Quantum Network"
+  partner: "IBM Research Zurich"
+  description: "Access to 127-qubit Eagle and 1000+ qubit Condor processors for finance experiments."
+
+- title: "Industry Partnership"
+  partner: "Credit Suisse / UBS"
+  description: "Joint development of quantum risk models for derivatives portfolios."
+
+- title: "Academic Network"
+  partner: "QFin Consortium"
+  description: "European research network for quantum computing in quantitative finance."

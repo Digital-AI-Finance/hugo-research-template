@@ -1,0 +1,19 @@
+- title: "Quantum Finance Workshop 2025"
+  date: "2025-06-20"
+  month: "Jun"
+  day: "20"
+  year: "2025"
+  type: "Workshop"
+  location: "Zurich, Switzerland"
+  description: "Hands-on workshop on quantum algorithms for finance using Qiskit."
+  upcoming: true
+
+- title: "IEEE Quantum Week 2024"
+  date: "2024-11-08"
+  month: "Nov"
+  day: "08"
+  year: "2024"
+  type: "Conference"
+  location: "Montreal, Canada"
+  description: "Presented quantum portfolio optimization results on IBM Eagle processors."
+  upcoming: false
