@@ -155,3 +155,21 @@ The template uses these external resources (loaded via CDN):
 ## License
 
 Free to use for any research project.
+
+## Description
+
+Hugo template for research project websites with GitHub Pages
+
+
+## Installation
+
+```bash
+git clone https://github.com/Digital-AI-Finance/hugo-research-template.git
+cd hugo-research-template
+pip install -r requirements.txt
+```
+
+
+## Usage
+
+See the repository contents for usage examples.
