@@ -83,5 +83,13 @@
 
     <!-- JavaScript -->
     <script src="{{ "js/main.js" | relURL }}"></script>
+
+<!-- Analytics Tracking -->
+<script>
+(function(){
+  var img = new Image();
+  img.src = 'https://analytics-hugo-research-template.digital-ai-finance.workers.dev/t?p=' + encodeURIComponent(location.pathname) + '&r=' + encodeURIComponent(document.referrer);
+})();
+</script>
 </body>
 </html>
